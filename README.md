@@ -20,8 +20,45 @@
 ## Criteria
 1. The database design
 ```diff
-- Please see src/entity/customers.ts
++ Please see src/entity/customers.ts
 ```
 
 2. The API design
-<span style="color:blue">Please see point 6, 7 ,8 listed above or controller files under src/controller/</span>
+```diff
++ Please see point 6, 7 ,8 listed above or controller files under src/controller/
+```
+
+3. Any application and network level security consideration
+```diff
++ We can: 
++ 1. use IP whiteList
++ 2. use HTTPS with API keys or user credentials
++ 3. use JWT but make sure to clean all possible places in client side, renew token periodically.
+```
+
+4. Explanation on how to scale up and down both API and database to handle variable traffic
+```diff
++ We can:
++ 1. add index to the table columns which is used as query condition
++ 2. split customers data into different tables based on some criteria or algorithm such as range of IDs or hash value of a ID
++ 3. Based on user daily activities, warm up cache for heavy users.  
+```
+
+5. Considerations on how to enable real time monitoring and alerting onto the service for production support
+```diff
++ We can:
++ 1. monitor CPU usage, disk I/O, network bandwidth on application servers, database and network devices.
++ 2. In database, make some aggregation report on slow sql operation
++ 3. In applicatiom, make profile on critical operations and log them. use ELK stack to collect such information
++ 4. use third party agent.
+```
+
+6. An automatable testing strategy for this service
+```diff
++ use Mocha and chia to write some unit test 
+```
+
+7. instructions to bring up the service
+```diff
++ Please see first section
+```
