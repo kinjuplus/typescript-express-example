@@ -17,8 +17,9 @@
 2. use the command `docker run --name MyPostgres -d -p 5432:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD='12345' postgres` to make a postgresql databse up and running.
 3. If you use the above command, don't forget to change ormconfig.json accordingly.
 
-#Criteria
+## Criteria
 1. The database design
 <span style="color:blue">Please see src/entity/customers.ts</span>
+
 2. The API design
 <span style="color:blue">Please see point 6, 7 ,8 listed above or controller files under src/controller/</span>
