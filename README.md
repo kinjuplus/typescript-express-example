@@ -6,11 +6,12 @@
 2. Before using these restful APIs, please setup database as mentioned below. 
 3. run `npm i`
 4. edit `ormconfig.json` and change your database configuration (you can also change a database type, but don't forget to install specific database drivers). 
-5. use the init.sql located in sql/ to initialize sample data.
-5. run `npm start`
-6. use curl or postman to inovke the restful API, for example, to test login, you can send post request with email and password included in x-wwww-for-urlencoded body to the url `http://localhost:3000/login`.
-7. As for logout, just send post request to `http://localhost:3000/logout` to destroy session object associated with the current user.
-8. As for retriving customer's personal info, send a get request to `http://localhost:3000/customers/${id}` to get the customer with his id specified in the end of the url. 
+5. Note that if the customers table doesn't exists before running the application , the application will create the table during startup process. If you want to create the customers table manually, please use the DDL in the init.sql and don't specify any constraints. This seems to be an issue of typeorm. see https://github.com/typeorm/typeorm/issues/2376. Lastly , you can change the synchronize flag in ormconfig.json to false.
+6. use the DML in the init.sql located in sql/ to initialize sample data.
+7. run `npm start`
+8. use curl or postman to inovke the restful API, for example, to test login, you can send post request with email and password included in x-wwww-for-urlencoded body to the url `http://localhost:3000/login`.
+9. As for logout, just send post request to `http://localhost:3000/logout` to destroy session object associated with the current user.
+10. As for retriving customer's personal info, send a get request to `http://localhost:3000/customers/${id}` to get the customer with his id specified in the end of the url. 
 
 ## How to setup DB
 1. install docker service in your computer.
@@ -25,7 +26,7 @@
 
 2. The API design
 ```diff
-+ Please see point 6, 7 ,8 listed above or controller files under src/controller/
++ We follow standard restful url and http method convention for API operations. Please see point 8, 9 ,10 listed above or controller files under src/controller/
 ```
 
 3. Any application and network level security consideration
