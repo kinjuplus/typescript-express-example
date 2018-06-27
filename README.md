@@ -17,6 +17,7 @@
 1. install docker service in your computer.
 2. use the command `docker run --name MyPostgres -d -p 5432:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD='12345' postgres` to make a postgresql databse up and running.
 3. If you use the above command, don't forget to change ormconfig.json accordingly.
+4. create `test` database in the newly created postgres service.
 
 ## Criteria
 1. The database design
@@ -51,7 +52,7 @@
 + 1. monitor CPU usage, disk I/O, network bandwidth on application servers, database and network devices.
 + 2. In database, make some aggregation report on slow sql operation
 + 3. In applicatiom, make profile on critical operations and log them. use ELK stack to collect such information
-+ 4. use third party agent.
++ 4. leverage third party agent.
 ```
 
 6. An automatable testing strategy for this service
@@ -62,4 +63,10 @@
 7. instructions to bring up the service
 ```diff
 + Please see the first section
+```
+
+8. Deployment Strategy
+```diff
++ For application, We can build a Docker file which is made on top of some OS, say ubuntu, and install git, node js in it. After that, we clone the source repository and build it, bring up the application, and expose port we want.
++ For database, make a docker file which is based on a postgres and create a database on it. Finally, just expose postgres service.
 ```
