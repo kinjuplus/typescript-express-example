@@ -67,6 +67,6 @@
 
 8. Deployment Strategy
 ```diff
-+ For application, We can build a Docker file which is made on top of some OS, say ubuntu, and install git, node js in it. After that, we clone the source repository and build it, bring up the application, and expose port we want.
++ For application, We can build a Docker file which is made on top of some OS, say ubuntu, and install git, node js in it. After that, we clone the source repository and build source code, bring up the application, and expose port number we want.
 + For database, make a docker file which is based on a postgres and create a database on it. Finally, just expose postgres service.
 ```
