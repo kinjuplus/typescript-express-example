@@ -1,13 +1,18 @@
-# Example how to use Express and TypeORM with TypeScript
 
-1. clone repository 
-2. run `npm i`
-3. edit `ormconfig.json` and change your database configuration (you can also change a database type, but don't forget to install specific database drivers)
-4. run `npm start`
-5. open `http://localhost:3000/posts` and you'll empty array
-6. use curl, postman or other tools to send http requests to test your typeorm-based API
 
-## How to use CLI?
+# how to bring up this application
 
-1. install `typeorm` globally: `npm i -g typeorm`
-2. run `typeorm -h` to show list of available commands
+1. clone repository
+2. Before using these restful APIs, please setup database as mentioned below. 
+3. run `npm i`
+4. edit `ormconfig.json` and change your database configuration (you can also change a database type, but don't forget to install specific database drivers). 
+5. use the init.sql located in sql/ to initialize sample data.
+5. run `npm start`
+6. use curl or postman to inovke the restful API, for example, to test login, you can send post request with email and password included in x-wwww-for-urlencoded body to the url `http://localhost:3000/login`.
+7. As for logout, just send post request to `http://localhost:3000/logout` to destroy session object associated with the current user.
+8. As for retriving customer personal info, send a get request to `http://localhost:3000/customers/${id}` to get the customer with his id specified in the end of the url. 
+
+## How to setup DB
+1. install docker service in your computer.
+2. use the command `docker run --name MyPostgres -d -p 5432:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD='12345' postgres` to make a postgresql databse up and running.
+3. If you use the above command, don't forget to change ormconfig.json accordingly.
