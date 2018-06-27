@@ -19,7 +19,9 @@
 
 ## Criteria
 1. The database design
-<span style="color:blue">Please see src/entity/customers.ts</span>
+```diff
+- Please see src/entity/customers.ts
+```
 
 2. The API design
 <span style="color:blue">Please see point 6, 7 ,8 listed above or controller files under src/controller/</span>
