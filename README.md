@@ -55,10 +55,10 @@
 
 6. An automatable testing strategy for this service
 ```diff
-+ use Mocha and chia to write some unit test 
++ use Mocha and Chia to write some unit tests 
 ```
 
 7. instructions to bring up the service
 ```diff
-+ Please see first section
++ Please see the first section
 ```
